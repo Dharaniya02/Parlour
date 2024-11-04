@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="{% static 'salon/css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="hero-section about-hero">
+        <div class="overlay">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hero-content">
+                <h1>About GlowUp Beauty Parlor</h1>
+                <p>We are dedicated to providing you with the best beauty and wellness services.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <h2>Our Mission</h2>
+        <p>At GlowUp Beauty Parlor, we strive to enhance your natural beauty and promote wellness through our professional services and products. Our team is passionate about creating a relaxing and rejuvenating experience for every client.</p>
+
+        <div class="about-details">
+            <div class="about-card">
+                <i class="fas fa-user-friends about-icon"></i>
+                <h3>Experienced Professionals</h3>
+                <p>Our talented and experienced team is committed to providing exceptional services tailored to your needs.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-leaf about-icon"></i>
+                <h3>Natural Products</h3>
+                <p>We use high-quality, natural products to ensure your beauty and health without harmful chemicals.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-heart about-icon"></i>
+                <h3>Customer Satisfaction</h3>
+                <p>Your satisfaction is our top priority. We aim to exceed your expectations with every visit.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-calendar-alt about-icon"></i>
+                <h3>Flexible Appointments</h3>
+                <p>We offer flexible appointment times to accommodate your busy schedule. Book your experience today!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 GlowUp Beauty Parlor. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

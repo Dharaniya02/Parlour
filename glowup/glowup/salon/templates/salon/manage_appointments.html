@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments - GlowUp Beauty Parlor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f0f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #d1477f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #d1477f;
+            color: white;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #d1477f;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #ff77a9;
+        }
+        .action-btn {
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .accept-btn {
+            background-color: #28a745; /* Green for accepting */
+        }
+        .delete-btn {
+            background-color: #dc3545; /* Red for deleting */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Manage Appointments</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Actions</th> <!-- Actions column -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.id }}</td>
+                    <td>{{ appointment.name }}</td>
+                    <td>{{ appointment.service }}</td>
+                    <td>{{ appointment.date }}</td>
+                    <td>{{ appointment.time }}</td>
+                    <td>{{ appointment.get_status_display }}</td>
+                    <td>
+                        {% if appointment.status == 'Pending' %}
+                        <!-- Accept Appointment Button -->
+                        <form action="{% url 'accept_appointment' appointment.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="action-btn accept-btn">Accept</button>
+                        </form>
+                        {% endif %}
+                        <!-- Delete Appointment Button -->
+                        <form action="{% url 'delete_appointment' appointment.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="action-btn delete-btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{% url 'admin_dashboard' %}" class="btn">Back to Dashboard</a>
+    </div>
+</body>
+</html>

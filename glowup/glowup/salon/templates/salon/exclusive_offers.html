@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Offers - GlowUp Beauty Parlor</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body style="margin: 0; font-family: 'Poppins', sans-serif; background-color: #f0f8f5;">
+
+    <!-- Navigation Bar -->
+    <nav style="display: flex; justify-content: space-between; padding: 15px; background-color: #4CAF50; color: white;">
+        <div>
+            <a href="{% url 'home' %}" style="color: white; text-decoration: none; padding: 10px;">Home</a>
+            <a href="{% url 'user_dashboard' %}" style="color: white; text-decoration: none; padding: 10px;">back to dashboard</a>
+            <a href="#" style="color: white; text-decoration: none; padding: 10px;"></a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header style="text-align: center; background: linear-gradient(to right, #3cb371, #66cdaa); padding: 40px; color: white;">
+        <h1 style="margin: 0; font-size: 3em; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">Exclusive Offers Just for You</h1>
+        <p style="font-size: 1.5em; font-style: italic;">Experience Nature’s Best with Our Unique Treatments</p>
+    </header>
+
+    <!-- Offers Section -->
+    <div style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: space-around;">
+        <!-- Offer Card 1 -->
+        <div style="background: #e0f7fa; border-radius: 15px; padding: 20px; margin: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 30%;">
+            <i class="fas fa-leaf" style="font-size: 40px; color: #00796b;"></i>
+            <h2 style="color: #00796b;">Nature's Glow Facial</h2>
+            <p style="color: #004d40;">Revitalize your skin with our organic facial using all-natural ingredients.</p>
+            <p style="color: #388e3c; font-weight: bold;">Only $50</p>
+        </div>
+
+        <!-- Offer Card 2 -->
+        <div style="background: #fff9c4; border-radius: 15px; padding: 20px; margin: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 30%;">
+            <i class="fas fa-sun" style="font-size: 40px; color: #ffb300;"></i>
+            <h2 style="color: #f57f17;">Sunshine Hair Treatment</h2>
+            <p style="color: #ff8f00;">Nourish your hair with our exclusive sun-infused oils and treatments.</p>
+            <p style="color: #f57f17; font-weight: bold;">Only $40</p>
+        </div>
+
+        <!-- Offer Card 3 -->
+        <div style="background: #fff3e0; border-radius: 15px; padding: 20px; margin: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 30%;">
+            <i class="fas fa-water" style="font-size: 40px; color: #0288d1;"></i>
+            <h2 style="color: #0277bd;">Hydration Spa Package</h2>
+            <p style="color: #01579b;">Indulge in a luxurious spa experience that deeply hydrates your skin.</p>
+            <p style="color: #0277bd; font-weight: bold;">Only $70</p>
+        </div>
+    </div>
+
+</body>
+</html>

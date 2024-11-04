@@ -1,0 +1,51 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background: url('{% static 'salon/images/background.jpg' %}') no-repeat center center/cover; /* Background image */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 40px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center; /* Center align text */
+    width: 400px; /* Fixed width for the dashboard */
+}
+
+h1 {
+    margin-bottom: 20px; /* Space below the heading */
+    color: #ff69b4; /* Pink color for the heading */
+    font-size: 2.5rem; /* Font size for the heading */
+}
+
+p {
+    margin: 10px 0; /* Space around paragraphs */
+    font-size: 1.2rem; /* Font size for the paragraphs */
+}
+
+p a {
+    color: #ff69b4; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Transition for color */
+}
+
+p a:hover {
+    color: #ff1493; /* Darker shade on hover */
+}
+
+.dashboard-container i {
+    color: #ff69b4; /* Icon color */
+    margin-right: 8px; /* Space between icon and text */
+}

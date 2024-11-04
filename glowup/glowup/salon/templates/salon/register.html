@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="{% static 'salon/css/register.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'salon/images/reg.jpg' %}");
+            background-size:cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .error-message {
+            display: none; /* Hide error messages initially */
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <h2>Create an Account</h2> <!-- Title for registration -->
+            <!-- Display error or success messages -->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="register-btn">Register</button>
+            </form>
+            <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome icons -->
+</body>
+</html>

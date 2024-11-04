@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0; /* Light background for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+.service-header {
+    text-align: center;
+    padding: 20px;
+}
+/* Navigation Bar Styles */
+nav {
+    background-color: #4e342e; /* Dark brown color for the nav bar */
+    padding: 25px 0; /* Padding for top and bottom */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center the nav items */
+}
+
+nav ul li {
+    display: inline; /* Inline display for horizontal layout */
+    margin: 0 25px; /* Spacing between items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* White text color for contrast */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: #ff6f20; /* Change color on hover to orange */
+}
+
+
+.service-detail {
+    padding: 20px;
+}
+
+.flashcard-container {
+    display: flex;
+    justify-content: space-around; /* Spread out the flashcards */
+    flex-wrap: wrap; /* Allow wrapping to the next line on smaller screens */
+    margin: 20px 0;
+}
+
+.flashcard {
+    background-color: #ffcc80; /* Light orange background */
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px; /* Set a fixed width */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.flashcard:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.flashcard h4 {
+    color: #ff5722; /* Darker orange for titles */
+}
+
+.offer {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #d95f0e; /* Medium orange color for offers */
+}
+
+.massage-image {
+    width: 100%; /* Full width */
+    max-width: 600px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+}
+
+.cta-container {
+    margin: 20px 0;
+}
+
+.cta-btn {
+    background-color: #ff6f20; /* Orange background */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background-color: #e65c00; /* Darker orange on hover */
+}

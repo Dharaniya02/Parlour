@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMj25YjZ4YbSc4D5Ox5Y0OefqO8gAxJ4pHc3/v" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f0f5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #d1477f;
+            color: white;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .dashboard-container {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #d1477f;
+            margin-bottom: 20px;
+        }
+        .admin-options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .admin-card {
+            background-color: #fff5f8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .admin-card i {
+            font-size: 2rem;
+            color: #d1477f;
+        }
+        .admin-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 10px 0;
+        }
+        .admin-card p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        .admin-card a {
+            padding: 10px 20px;
+            background-color: #d1477f;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .admin-card a:hover {
+            background-color: #ff77a9;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>GlowUp Admin Dashboard</h1>
+        <a href="{% url 'admin_login' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <div class="dashboard-container">
+        <h2>Welcome, Admin! Manage all aspects of GlowUp Beauty Parlor below.</h2>
+        
+        <!-- Admin functionalities -->
+        <div class="admin-options">
+            <div class="admin-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Manage Appointments</h3>
+                <p>Total: <span id="appointment-count">0</span></p>
+                <a href="{% url 'manage_appointments' %}">Go to Appointments</a>
+            </div>
+
+            <div class="admin-card">
+                <i class="fas fa-users"></i>
+                <h3>Manage Users</h3>
+                <p>Total: <span id="user-count">0</span></p>
+                <a href="{% url 'manage_users' %}">Go to Users</a>
+            </div>
+
+            <div class="admin-card">
+                <i class="fas fa-gift"></i>
+                <h3>Manage Offers</h3>
+                <p>Total: <span id="offer-count">0</span></p>
+                <a href="{% url 'offer_list' %}">Go to Offers</a>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="chart-container">
+            <canvas id="dashboardChart"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 GlowUp Beauty Parlor. All rights reserved.
+    </footer>
+
+    <script>
+        // Function to fetch the dashboard counts dynamically
+        function fetchDashboardCounts() {
+            fetch('/get_dashboard_counts/')
+                .then(response => response.json())
+                .then(data => {
+                    // Update the counts in the dashboard
+                    document.getElementById('appointment-count').innerText = data.appointment_count;
+                    document.getElementById('user-count').innerText = data.user_count;
+                    document.getElementById('offer-count').innerText = data.offer_count;
+
+                    // Update the chart with the dynamic data
+                    updateChart(data.appointment_count, data.user_count, data.offer_count);
+                })
+                .catch(error => console.error('Error fetching counts:', error));
+        }
+
+        // Function to update the chart with dynamic data
+        function updateChart(appointmentCount, userCount, offerCount) {
+            const ctx = document.getElementById('dashboardChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Appointments', 'Users', 'Offers'],
+                    datasets: [{
+                        label: 'Dashboard Overview',
+                        data: [appointmentCount, userCount, offerCount],
+                        backgroundColor: ['#d1477f', '#ff77a9', '#f5a623'],
+                        borderColor: '#fff',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Dashboard Overview'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Fetch the counts when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchDashboardCounts();
+        });
+    </script>
+</body>
+</html>

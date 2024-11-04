@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GlowUp Beauty Parlor{% endblock %}</title>
+    <style>
+        /* Inline CSS for the Navigation Bar */
+        .main-nav {
+            background-color: #e67e22; /* Background color for the nav bar */
+            padding: 15px 0;
+        }
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .main-nav ul li {
+            margin: 0 15px;
+        }
+        .main-nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: 'Arial', sans-serif;
+            padding: 8px 16px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .main-nav ul li a:hover {
+            background-color: #d35400; /* Change background on hover */
+        }
+        /* Additional Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+
+            {% if user.is_authenticated %}
+                
+                
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+
+            
+        </ul>
+    </nav>
+
+    {% block content %}
+    <!-- Page-specific content will go here -->
+    {% endblock %}
+</body>
+</html>

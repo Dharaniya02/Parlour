@@ -1,0 +1,31 @@
+.about-section {
+    background-image: url("{% static 'salon/images/hh.jpg' %}"); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    color: #fff;
+}
+
+.about-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.team-member {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+}
+
+.team-member i {
+    font-size: 3em;
+    color: #FFD700; /* Gold color for icons */
+}

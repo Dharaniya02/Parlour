@@ -1,0 +1,92 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background: url('{% static 'salon/images/background.jpg' %}') no-repeat center center/cover; /* Replace with your background image */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 40px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center; /* Center align text */
+    width: 350px; /* Fixed width for the login box */
+}
+
+h1 {
+    margin-bottom: 30px; /* Space below the heading */
+    color: #ff69b4; /* Pink color for the heading */
+}
+
+.input-group {
+    position: relative; /* Position for icon */
+    margin-bottom: 20px; /* Space between inputs */
+}
+
+.input-group i {
+    position: absolute; /* Absolute positioning for icon */
+    left: 10px; /* Space from the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust position */
+    color: #ff69b4; /* Icon color */
+}
+
+.input-group input {
+    width: 100%; /* Full width for input */
+    padding: 10px 40px; /* Padding with space for icon */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    transition: border-color 0.3s ease; /* Transition for border color */
+}
+
+.input-group input:focus {
+    border-color: #ff69b4; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+button {
+    background-color: #ff69b4; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Transition for hover */
+    width: 100%; /* Full width for button */
+}
+
+button:hover {
+    background-color: #ff1493; /* Darker shade on hover */
+}
+
+p {
+    margin-top: 20px; /* Space above the paragraph */
+}
+
+p a {
+    color: #ff69b4; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Transition for color */
+}
+
+p a:hover {
+    color: #ff1493; /* Darker shade on hover */
+}
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}

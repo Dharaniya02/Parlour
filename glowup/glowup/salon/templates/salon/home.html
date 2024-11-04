@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="{% static 'salon/css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-image: url("{% static 'salon/images/hh.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .error-message {
+            display: none; /* Hide error messages initially */
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section">
+        <div class="overlay">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li> <!-- Updated to link to the contact section -->
+                    
+                </ul>
+            </nav>
+            <div class="hero-content">
+                <h1>Welcome to GlowUp Beauty Parlor</h1>
+                <p>Your destination for beauty, relaxation, and rejuvenation.</p>
+                <a href="{% url 'register' %}" class="cta-btn">Book Your Appointment Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card service-facial">
+                <div class="service-overlay">
+                    <i class="fas fa-spa service-icon"></i>
+                    <h3>Facial Treatment</h3>
+                    <p>Relax and rejuvenate with our soothing facial treatments.</p>
+                    <a href="{% url 'facial' %}" class="book-btn facial-btn">Book Facial Treatment</a>
+                </div>
+            </div>
+            <div class="service-card service-haircut">
+                <div class="service-overlay">
+                    <i class="fas fa-cut service-icon"></i>
+                    <h3>Haircuts & Styling</h3>
+                    <p>Transform your look with professional haircuts and styling.</p>
+                    <a href="{% url 'haircut' %}" class="book-btn haircut-btn">Book Haircut</a>
+                </div>
+            </div>
+            <div class="service-card service-massage">
+                <div class="service-overlay">
+                    <i class="fas fa-hand-sparkles service-icon"></i>
+                    <h3>Massage Therapy</h3>
+                    <p>Relieve stress and tension with our expert massage therapy.</p>
+                    <a href="{% url 'massage' %}" class="book-btn massage-btn">Book Massage</a>
+                </div>
+            </div>
+            <div class="service-card service-nails">
+                <div class="service-overlay">
+                    <i class="fas fa-hand-paper service-icon"></i>
+                    <h3>Manicure & Pedicure</h3>
+                    <p>Pamper your hands and feet with our luxurious nail care services.</p>
+                    <a href="{% url 'manicure_pedicure' %}" class="book-btn nails-btn">Book Manicure & Pedicure</a>
+                </div>
+            </div>
+            <div class="service-card service-makeup">
+                <div class="service-overlay">
+                    <i class="fas fa-paint-brush service-icon"></i>
+                    <h3>Bridal & Event Makeup</h3>
+                    <p>Get flawless makeup for weddings, parties, and special occasions.</p>
+                    <a href="{% url 'bridal_makeup' %}" class="book-btn makeup-btn">Book Bridal Makeup</a>
+                </div>
+            </div>
+            <div class="service-card service-waxing">
+                <div class="service-overlay">
+                    <i class="fas fa-scroll service-icon"></i>
+                    <h3>Waxing & Hair Removal</h3>
+                    <p>Experience smooth, hair-free skin with our professional waxing services.</p>
+                    <a href="{% url 'waxing' %}" class="book-btn waxing-btn">Book Waxing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <p class="contact-info">+123 456 7890</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <p class="contact-info">info@glowup.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <p class="contact-info">123 Beauty St, Glam City, Country</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Get in Touch</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="contact-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    

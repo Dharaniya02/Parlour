@@ -1,0 +1,36 @@
+<!-- salon/templates/salon/admin_login.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="{% static 'salon/css/admin_login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMj25YjZ4YbSc4D5Ox5Y0OefqO8gAxJ4pHc3/v" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="login-container">
+        <h1>Admin Login</h1>
+        <!-- Display the error message if login fails -->
+        {% if error_message %}
+            <div class="error-message">
+                <p>{{ error_message }}</p>
+            </div>
+        {% endif %}
+        <form method="post" action="{% url 'admin_login' %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Are you a user? <a href="{% url 'login' %}">Login here</a></p>  <!-- Link to user login -->
+    </div>
+</body>
+</html>

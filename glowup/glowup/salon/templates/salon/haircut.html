@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haircut Treatment - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="{% static 'salon/css/haircut.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="service-header">
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'home' %}">Back to Services</a></li>
+            </ul>
+        </nav>
+        <div class="service-detail">
+            <h2>Haircut Treatment</h2>
+            <p>Transform your style with our professional haircut services. Whether you're looking for a trendy update or a classic cut, our experienced stylists will help you achieve your desired look.</p>
+            
+            <h3>What We Offer:</h3>
+            <div class="flashcard-container">
+                <div class="flashcard">
+                    <h4>Men's Haircut</h4>
+                    <p>Classic and modern styles tailored for men.</p>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Women's Haircut</h4>
+                    <p>Trendy cuts and styles to enhance your beauty.</p>
+                    <i class="fas fa-female"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Children's Haircut</h4>
+                    <p>Fun and stylish cuts for your little ones.</p>
+                    <i class="fas fa-child"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Layered Cut</h4>
+                    <p>Add volume and movement to your hair with layers.</p>
+                    <i class="fas fa-cut"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Bangs Trim</h4>
+                    <p>Freshen up your look with a simple bang trim.</p>
+                    <i class="fas fa-scissors"></i>
+                </div>
+            </div>
+            
+            <h3>Benefits of Our Haircut Treatments:</h3>
+            <div class="flashcard-container benefits">
+                <div class="flashcard">
+                    <h4>Personalized Style</h4>
+                    <p>Consultation to find the perfect style for you.</p>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Professional Expertise</h4>
+                    <p>Experienced stylists to ensure quality cuts.</p>
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Healthy Hair</h4>
+                    <p>Regular trims promote healthy hair growth.</p>
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Style Maintenance</h4>
+                    <p>Keep your look fresh with regular haircuts.</p>
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Relaxing Experience</h4>
+                    <p>Enjoy a calming atmosphere while getting your haircut.</p>
+                    <i class="fas fa-spa"></i>
+                </div>
+            </div>
+    
+            <div class="offer">
+                <p>Special Offer: Get <strong>15% off</strong> on your first haircut. Valid until 31st December!</p>
+            </div>
+            
+            <img src="{% static 'salon/images/ht.jpg' %}" alt="Haircut Treatment" class="haircut-image">
+            <div class="cta-container">
+                <a href="{% url 'book_appointment' %}" class="cta-btn">Book Now</a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

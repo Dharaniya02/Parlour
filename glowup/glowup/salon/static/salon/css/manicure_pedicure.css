@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #EDE7F6; /* Light lavender background */
+    color: #4A003D; /* Dark purple text color */
+}
+
+.service-header {
+    text-align: center;
+}
+
+nav {
+    background-color: #6A5ACD; /* Slate blue for nav bar */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 25px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* White text for links */
+    font-size: 18px;
+}
+
+.service-detail {
+    padding: 30px;
+}
+
+.flashcard-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+.flashcard {
+    background-color: #D8BFD8; /* Thistle color for flashcards */
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+    margin: 10px; /* Spacing between cards */
+}
+
+.flashcard:hover {
+    transform: scale(1.05); /* Slight scaling on hover */
+}
+
+.flashcard i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #4A003D; /* Dark purple icon color */
+}
+
+.offer {
+    background-color: #E6E6FA; /* Lavender color for offer section */
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0; /* Margin for spacing */
+}
+
+.cta-btn {
+    background-color: #7B68EE; /* Medium slate blue for button */
+    color: white; /* White text for button */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.manicure-pedicure-image {
+    width: 100%; /* Responsive image */
+    max-width: 500px; /* Limit maximum width */
+    border-radius: 8px; /* Rounded corners */
+}

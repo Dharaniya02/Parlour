@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Settings - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.js" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f0f5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #d1477f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .settings {
+            margin: 20px;
+        }
+        .settings label {
+            display: block;
+            margin: 10px 0;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #d1477f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #ff77a9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Manage System Settings</h1>
+</div>
+
+<div class="settings">
+    <label>
+        <strong>Business Name:</strong>
+        <input type="text" value="GlowUp Beauty Parlor" />
+    </label>
+    <label>
+        <strong>Contact Email:</strong>
+        <input type="email" value="info@glowup.com" />
+    </label>
+    <label>
+        <strong>Business Hours:</strong>
+        <input type="text" value="9 AM - 9 PM" />
+    </label>
+    <button class="button" onclick="saveSettings()">Save Settings</button>
+</div>
+
+<script>
+    function saveSettings() {
+        alert('Settings saved successfully!');
+        // Save settings functionality to be implemented
+    }
+</script>
+
+</body>
+</html>

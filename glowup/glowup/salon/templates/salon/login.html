@@ -1,0 +1,29 @@
+{% extends 'salon/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="login-container" style="display: flex; justify-content: flex-start; align-items: center; height: 100vh; padding-left: 50px; margin-left: 100px; background-image: url('{% static 'salon/images/lo.jpg' %}'); background-size: cover; background-position: center; background-attachment: fixed; margin: 0; padding: 0;">
+        <div class="login-box" style="background: rgba(255, 255, 255, 0.9); border-radius: 8px; padding: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 400px;">
+            <h2 style="text-align: center;">Login to GlowUp</h2>
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+                    <label for="username" style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: border-color 0.3s ease;">
+                </div>
+                <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+                    <label for="password" style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: border-color 0.3s ease;">
+                </div>
+                <button type="submit" style="background-color: #f9b6c1; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer; transition: background-color 0.3s ease; width: 100%;">Login</button>
+            </form>
+            <div class="links" style="margin-top: 20px;">
+                <p style="color: #555; font-size: 0.9rem;">Don't have an account? <a href="{% url 'register' %}" style="color: #f06a80; text-decoration: none;">Register here</a></p>
+                <p style="color: #555; font-size: 0.9rem;">Are you an admin? <a href="{% url 'admin_login' %}" style="color: #f06a80; text-decoration: none;">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome icons -->

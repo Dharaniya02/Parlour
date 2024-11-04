@@ -1,0 +1,111 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://i.pinimg.com/564x/f2/85/40/f28540e33d0647c8c548a78e67ef6e3c.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: flex-start; /* Align the container to the left */
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px; /* Increased width for more space */
+    padding: 40px; /* Outer padding */
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for a clearer view */
+    padding: 60px; /* Increased padding for spaciousness */
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    text-align: center;
+}
+
+/* Heading styles */
+.login-box h2 {
+    font-size: 2rem; /* Reduced heading size */
+    color: #333;
+    margin-bottom: 30px; /* Increased margin for more space below */
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Input group styles */
+.input-group {
+    position: relative;
+    margin-bottom: 25px; /* Increased margin for more space between inputs */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #f9b6c1; /* Changed focus border color */
+}
+
+/* Icon styles */
+.input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+/* Button styles */
+.login-btn {
+    background-color: #f9b6c1; /* Button background color */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width button */
+}
+
+.login-btn:hover {
+    background-color: #f06a80; /* Darken button color on hover */
+}
+
+/* Links section styles */
+.links {
+    margin-top: 30px; /* Increased margin for more space above links */
+}
+
+.links p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.links a {
+    color: #f06a80; /* Link color */
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Error message styles */
+.error-message {
+    display: none; /* Hide error messages initially */
+    color: red; /* Red color for errors */
+    text-align: center; /* Center align error messages */
+    margin-top: 10px; /* Space above error message */
+}

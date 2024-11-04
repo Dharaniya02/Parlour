@@ -1,0 +1,369 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #fffdfd;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: url('{% static 'salon/images/hh.jpg' %}') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Navigation */
+.main-nav {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin: 0 20px;
+}
+
+.main-nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #f9b6c1;
+}
+
+/* Hero Content */
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.cta-btn {
+    margin-top: 40px;
+    padding: 15px 40px;
+    background-color: #f9b6c1;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.cta-btn:hover {
+    background-color: #f06a80;
+}
+
+/* Services Section */
+.services-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.service-card {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Booking Buttons */
+.book-btn {
+    margin-top: 15px;
+    padding: 10px 30px;
+    background-color: #f9b6c1;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #f06a80;
+}
+
+/* Individual Service Backgrounds */
+.service-facial {
+    background: url('{% static 'static/images/hh.jpg' %}') no-repeat center center/cover;
+}
+
+.service-haircut {
+    background: url('{% static 'salon/images/haircut.jpg' %}') no-repeat center center/cover;
+}
+
+.service-massage {
+    background: url('{% static 'salon/images/massage.jpg' %}') no-repeat center center/cover;
+}
+
+.service-nails {
+    background: url('{% static 'salon/images/nails.jpg' %}') no-repeat center center/cover;
+}
+
+.service-makeup {
+    background: url('{% static 'salon/images/makeup.jpg' %}') no-repeat center center/cover;
+}
+
+.service-waxing {
+    background: url('{% static 'salon/images/waxing.jpg' %}') no-repeat center center/cover;
+}
+
+/* Individual Booking Button Colors */
+.facial-btn {
+    background-color: #f4c2c2;
+}
+
+.haircut-btn {
+    background-color: #ffd966;
+}
+
+.massage-btn {
+    background-color: #a9d0f5;
+}
+
+.nails-btn {
+    background-color: #ffe5b4;
+}
+
+.makeup-btn {
+    background-color: #e5c0f5;
+}
+
+.waxing-btn {
+    background-color: #f8bbd0;
+}
+
+.about-hero {
+    background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-hero .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    padding: 20px;
+}
+
+.about-section {
+    padding: 40px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.about-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 250px; /* Adjust width as needed */
+    transition: transform 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.about-icon {
+    font-size: 3em;
+    color: #ff69b4; /* Change to your desired icon color */
+    margin-bottom: 10px;
+}
+
+.footer-content {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Contact Section */
+/* Contact Section */
+.contact-section {
+    padding: 130px;
+    text-align: center;
+    background-color: #f8f8f8; /* Light background for contrast */
+    margin-top: 20px; /* Space above the contact section */
+}
+
+.contact-section h2 {
+    font-size: 2.5rem; /* Heading size for contact section */
+    color: #333; /* Color for heading */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.contact-container {
+    display: flex; /* Flexbox layout for contact items and form */
+    justify-content: space-around; /* Space between items */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    gap: 20px; /* Space between items */
+}
+
+.contact-details {
+    flex: 1; /* Allow details to take available space */
+    min-width: 250px; /* Minimum width for responsive layout */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center; /* Center align icon and text */
+    margin-bottom: 20px; /* Space below each contact item */
+}
+
+.contact-icon {
+    font-size: 2rem; /* Size for icons */
+    color: #f9b6c1; /* Icon color */
+    margin-right: 15px; /* Space between icon and text */
+}
+
+.contact-info {
+    font-size: 1.2rem; /* Font size for contact information */
+    color: #333; /* Color for text */
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1; /* Allow form to take available space */
+    min-width: 300px; /* Minimum width for responsive layout */
+    background: white; /* White background for form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px; /* Padding inside the form */
+}
+
+.contact-form h3 {
+    margin-bottom: 20px; /* Space below form heading */
+    color: #333; /* Color for form heading */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 5px; /* Rounded corners for inputs */
+    font-size: 1rem; /* Font size for inputs */
+}
+
+.contact-form button {
+    background-color: #f9b6c1; /* Background color for button */
+    color: white; /* Text color for button */
+    padding: 10px 20px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for button */
+    font-size: 1rem; /* Font size for button */
+    cursor: pointer; /* Pointer cursor for button */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.contact-form button:hover {
+    background-color: #f06a80; /* Darker shade on hover */
+}

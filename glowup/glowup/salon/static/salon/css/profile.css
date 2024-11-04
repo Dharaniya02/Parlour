@@ -1,0 +1,121 @@
+/* dashboard.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.dashboard-header {
+    background-color: #ffcc00; /* Yellow shade for the header */
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    flex: 0 0 100px; /* Fixed width for the avatar */
+    margin-right: 20px;
+}
+
+.avatar-img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.appointments {
+    margin-top: 20px;
+}
+
+.appointments table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.appointments th, .appointments td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.update-info {
+    margin-top: 20px;
+}
+
+.update-info form {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-info label {
+    margin-bottom: 5px;
+}
+
+.update-info input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.update-btn {
+    padding: 10px;
+    background-color: #ffcc00; /* Yellow button */
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ffcc00; /* Yellow footer */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    color:black ;
+}
+
+.dashboard-header {
+    text-align: center;
+    color: black;
+    padding: 50px 0;
+    background: rgb(196, 53, 77);
+}
+
+.dashboard-header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.dashboard-header p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.dashboard-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background:pink;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color:gray; /* Orange color for icons */
+}
+
+.card h2 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.card a {
+    color: #f39c12; /* Orange color for links */
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}

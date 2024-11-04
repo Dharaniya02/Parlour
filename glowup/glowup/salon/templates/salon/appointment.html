@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="{% static 'salon/css/appointment.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<div class="appointment-page">
+    <h1>Book Your Appointment</h1>
+    <form method="post" action="{% url 'book_appointment' %}">
+        {% csrf_token %}
+        
+        <!-- Service Selection -->
+        <div class="form-group">
+            <label for="service">Select Service</label>
+            <select id="service" name="service" required>
+                <option value="Facial Treatment">Facial Treatment</option>
+                <option value="Haircut">Haircut</option>
+                <option value="Massage">Massage</option>
+                <option value="Nails">Nails</option>
+                <option value="Makeup">Makeup</option>
+                <option value="Waxing">Waxing</option>
+            </select>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+        </div>
+        
+        <!-- Appointment Date and Time -->
+        <div class="form-group">
+            <label for="date">Appointment Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="time">Appointment Time</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="book-btn">Book Appointment</button>
+    </form>
+</div>
+
+</body>
+</html>

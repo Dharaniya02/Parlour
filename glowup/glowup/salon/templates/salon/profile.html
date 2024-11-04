@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #d87c9c; /* Light maroon */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: white; /* Card color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #5a5a5a;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #d87c9c; /* Light maroon */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #c77a8b; /* Darker shade */
+        }
+
+        .avatar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #e1e1e1;
+            margin-bottom: 10px;
+        }
+
+        .upload-btn {
+            background-color: #fff;
+            color: #d87c9c;
+            border: 2px solid #d87c9c;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .upload-btn:hover {
+            background-color: #d87c9c;
+            color: white;
+        }
+
+        input[type="file"] {
+            display: none; /* Hide the default file input */
+        }
+
+        .alert-success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #d6e9c6;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Profile Settings</h1>
+        <nav>
+            <a href="{% url 'user_dashboard' %}">Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Update Your Information</h2>
+
+        <!-- Display success messages -->
+        {% if messages %}
+            <div>
+                {% for message in messages %}
+                    <div class="alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Avatar Section -->
+        <div class="avatar">
+            <img src="{% if user.profile.avatar %}{{ user.profile.avatar.url }}{% else %}{% static 'salon/images/default_avatar.png' %}{% endif %}" alt="Profile Avatar">
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <!-- Avatar input inside the form -->
+            <label for="avatar" class="upload-btn">Upload New Avatar</label>
+            <input type="file" name="avatar" accept="image/*" id="avatar">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ user.first_name }}" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.username }}" required>
+
+            <button type="submit">Update Profile</button>
+        </form>
+    </main>
+
+    <script>
+        // When the upload button is clicked, trigger the file input
+        document.querySelector('.upload-btn').addEventListener('click', function() {
+            document.getElementById('avatar').click();
+        });
+    </script>
+</body>
+</html>

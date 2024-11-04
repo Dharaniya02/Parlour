@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waxing & Hair Removal - GlowUp Beauty Parlor</title>
+    <link rel="stylesheet" href="{% static 'salon/css/waxing.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="service-header">
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'services' %}">Back to Services</a></li>
+            </ul>
+        </nav>
+        <div class="service-detail">
+            <h2>Waxing & Hair Removal</h2>
+            <p>Reveal your skin's natural beauty with our professional waxing and hair removal services. Our expert technicians ensure a gentle and effective experience, leaving your skin smooth and radiant.</p>
+            
+            <h3>What We Offer:</h3>
+            <div class="flashcard-container">
+                <div class="flashcard">
+                    <h4>Full Body Waxing</h4>
+                    <p>Complete hair removal for a silky-smooth finish all over your body.</p>
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Facial Waxing</h4>
+                    <p>Precision waxing for a clean and polished look for your face.</p>
+                    <i class="fas fa-face-smile"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Bikini Waxing</h4>
+                    <p>Specialized waxing for a neat and comfortable bikini area.</p>
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Leg Waxing</h4>
+                    <p>Smooth and beautiful legs with our gentle waxing techniques.</p>
+                    <i class="fas fa-female"></i>
+                </div>
+            </div>
+
+            <h3>Benefits of Our Waxing Services:</h3>
+            <div class="flashcard-container benefits">
+                <div class="flashcard">
+                    <h4>Long-Lasting Smoothness</h4>
+                    <p>Enjoy smooth skin for weeks with our effective waxing methods.</p>
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Minimized Hair Growth</h4>
+                    <p>Regular waxing can lead to finer and sparser hair regrowth.</p>
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Professional Care</h4>
+                    <p>Our trained staff provide a safe and comfortable experience.</p>
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="flashcard">
+                    <h4>Skin Exfoliation</h4>
+                    <p>Waxing removes dead skin cells, revealing fresh, glowing skin.</p>
+                    <i class="fas fa-skin-virus"></i>
+                </div>
+            </div>
+
+            <div class="offer">
+                <p>Special Offer: Get <strong>10% off</strong> your first waxing treatment. Experience silky-smooth skin today!</p>
+            </div>
+            
+            <img src="{% static 'salon/images/wax.jpg' %}" alt="Waxing & Hair Removal" class="waxing-image">
+            <div class="cta-container">
+                <a href="{% url 'book_appointment' %}" class="cta-btn">Book Now</a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

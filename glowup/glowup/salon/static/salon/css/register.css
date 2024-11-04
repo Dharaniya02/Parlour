@@ -1,0 +1,112 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://www.example.com/your-beauty-background.jpg') no-repeat center center/cover; /* Background image */
+    display: flex;
+    justify-content: center; /* Centering the register container */
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 450px; /* Width for the container */
+    padding: 20px; /* Padding around the container */
+}
+
+.register-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 40px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    text-align: center; /* Centering text */
+}
+
+.register-box h2 {
+    font-size: 2rem; /* Title size */
+    color: #333; /* Title color */
+    margin-bottom: 20px; /* Space below the title */
+    text-transform: uppercase; /* Uppercase letters */
+    font-weight: 600; /* Bold weight */
+}
+
+.messages {
+    list-style-type: none; /* No bullet points */
+    color: red; /* Error message color */
+    margin-bottom: 20px; /* Space below messages */
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px; /* Space below input fields */
+    text-align: left; /* Align text to the left */
+}
+
+.input-group label {
+    display: block; /* Make label a block element */
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: 500; /* Font weight for label */
+    color: #333; /* Label color */
+}
+
+.input-group input {
+    width: 100%; /* Full width */
+    padding: 12px 40px; /* Padding inside input fields */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Border styling */
+    font-size: 1rem; /* Font size */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.input-group input:focus {
+    outline: none; /* Remove outline */
+    border-color: #f9b6c1; /* Border color on focus */
+}
+
+.input-group .icon {
+    position: absolute; /* Positioning for icon */
+    top: 50%; /* Center vertically */
+    left: 10px; /* Space from the left */
+    transform: translateY(-50%); /* Centering icon */
+    color: #888; /* Icon color */
+}
+
+.register-btn {
+    background-color: #f9b6c1; /* Button background color */
+    color: white; /* Button text color */
+    padding: 12px 20px; /* Padding inside button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    width: 100%; /* Full width for button */
+}
+
+.register-btn:hover {
+    background-color: #f06a80; /* Button color on hover */
+}
+
+.links {
+    margin-top: 20px; /* Space above links */
+}
+
+.links p {
+    color: #555; /* Color for links */
+    font-size: 0.9rem; /* Font size */
+}
+
+.links a {
+    color: #f06a80; /* Link color */
+    text-decoration: none; /* No underline */
+}
+
+.links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
